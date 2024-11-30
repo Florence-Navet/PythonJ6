@@ -1,24 +1,24 @@
-def draw_triangle(height):
-    if height < 1:
-        print("La hauteur doit être supérieure ou égale à 1.")
-        return
+L = int(input("Veuillez entrer le nombre de lignes:"))
 
-    for i in range(height):
-        # Calcul des espaces pour centrer le triangle
-        space = height - i - 1
-        
-        if i == 0:
-            # Sommet du triangle : juste une barre / et \
-            print(' ' * space+ "/" + "\\")
-        elif i == height - 1:
-            # Base du triangle : underscores entre les barres / et \
-            print(' ' * space + "/" + '_' * (2 * i - 1) + "\\")
-        else:
-            # Lignes intermédiaires : espaces entre les barres / et \
-            print(' ' * space + '/' + ' ' * (2 * i - 1) + '\\')
-
-# Demander à l'utilisateur d'entrer la hauteur du triangle
-height = int(input("Entrez la hauteur du triangle : "))
-draw_triangle(height)
+for i in range(1, L + 1):
+    # Espaces avant les barres pour centrer le triangle
+    for j in range(1, L - i + 1):
+        print(" ", end="")  # Espaces avant les barres
+    
+    # Affichage des barres et des underscores
+    if i == 1:
+        # Le sommet : une seule ligne avec /\
+        print("/", end="")
+        print("\\")
+    else:
+        # Barre gauche (/), espaces entre, et barre droite (\\)
+        print("/", end="")
+        for j in range(1, 2 * i - 1):
+            if i == L:
+                # Pour la dernière ligne (base), mettre des underscores (_)
+                print("_", end="")
+            else:
+                print(" ", end="")
+        print("\\")
 
 
