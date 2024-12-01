@@ -1,6 +1,5 @@
 def draw_diagonal_carpet(size):
     # Largeur totale du tapis, y compris le contour.
-    # On ajoute 2 : une ligne/colonne en haut et une en bas pour le contour.
     total_width = size + 2
 
     # Parcourir chaque ligne du tapis
@@ -19,9 +18,12 @@ def draw_diagonal_carpet(size):
             # Si on est sur la diagonale vide
             elif i - 1 == j - 1:
                 print(" ", end="")  # Laisser vide avec un espace
-            # Sinon, remplir les cases restantes avec des "#"
+            # Zone supérieure droite (triangle inversé)
+            elif i - 1 < j - 1:
+                print("#", end="")  # Triangle supérieur droit
+            # Zone inférieure gauche (triangle inversé)
             else:
-                print("#", end="")  # Afficher un "#"
+                print("#", end="")  # Triangle inférieur gauche
         # Quand on a terminé une ligne, aller à la ligne suivante
         print()
 
