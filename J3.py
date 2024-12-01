@@ -10,8 +10,8 @@ def draw_diagonal_carpet(size):
             if (i == 0 or i == total_width - 1) and (j == 0 or j == total_width - 1):
                 print("+", end="")  # Afficher un "+"
             # Si on est sur la bordure horizontale (ligne du haut ou du bas, sauf coins)
-            elif i == 0:  # Remplir la première ligne de `-`
-                print("-", end="")  # Remplir la première ligne de `-`
+            elif i == 0 or i == total_width - 1:
+                print("-", end="")  # Remplir la première et la dernière ligne de `-`
             # Si on est sur la bordure verticale (colonne de gauche ou de droite, sauf coins)
             elif j == 0 or j == total_width - 1:
                 print("|", end="")  # Afficher un "|"
