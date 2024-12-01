@@ -1,5 +1,6 @@
 L = int(input("Veuillez entrer le nombre de lignes:"))
 
+
 for i in range(1, L + 1):
     # Espaces avant les barres pour centrer le triangle
     for j in range(1, L - i + 1):
@@ -8,8 +9,8 @@ for i in range(1, L + 1):
     # Affichage des barres et des underscores
     if i == 1:
         # Le sommet : une seule ligne avec /\
-        print("/", end="")
-        print("\\")
+        print("/\\")
+        
     else:
         # Barre gauche (/), espaces entre, et barre droite (\\)
         print("/", end="")
